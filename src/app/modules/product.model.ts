@@ -30,7 +30,7 @@ const productSchema = new Schema<TProduct, ProductModel>({
   id: { type: String, required: [true, 'Id is required and should be unique'], unique: true },
   name: { type: String, required: [true, 'Name is required and should be unique'], unique: true },
   description: {type: String, required: [true, 'Description is required'] },
-  price: {type: String, required: [true, 'Price is required'] },
+  price: {type: number, required: [true, 'Price is required'] },
   category: {type: String, required: [true, 'Category is required'] },
   tags: { type: [String], required: [true, 'Tags are required'] },
   variants: { type: [variantSchema], required: [true, 'Variants are required'] },

@@ -21,7 +21,7 @@ const getAllProductFromDB = async () => {
     return result;
   };
   
-  export const StudentServices = {
+  export const ProductServices = {
    createProductIntoDB,
    getAllProductFromDB,
    getSingleProductFromDB,
