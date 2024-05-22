@@ -1,29 +1,26 @@
 import { TProduct } from './product.interface';
-import { Product } from './product.model';
+import { ProductModel } from './product.model';
 
 const createProductIntoDB = async (productData: TProduct) => {
-  if (await Product.isProductExists(productData.id)) {
-    throw new Error('Product Already Exists');
-  }
-  const result = await Product.create(productData);
+  const result = await ProductModel.create(productData);
   return result;
 };
 const getAllProductFromDB = async () => {
-    const result = await Product.find();
-    return result;
-  };
-  const getSingleProductFromDB = async (id: string) => {
-    const result = await Product.findOne({ id });
-    return result;
-  };
-  const deleteProductFromDB = async (id: string) => {
-    const result = await Product.updateOne({ id }, { isDeleted: true });
-    return result;
-  };
-  
-  export const ProductServices = {
-   createProductIntoDB,
-   getAllProductFromDB,
-   getSingleProductFromDB,
-   deleteProductFromDB,
-  };
+  const result = await ProductModel.find();
+  return result;
+};
+const getSingleProductFromDB = async (id: string) => {
+  const result = await ProductModel.findOne({ id });
+  return result;
+};
+const deleteProductFromDB = async (id: string) => {
+  const result = await ProductModel.updateOne({ id }, { isDeleted: true });
+  return result;
+};
+
+export const ProductServices = {
+  createProductIntoDB,
+  getAllProductFromDB,
+  getSingleProductFromDB,
+  deleteProductFromDB,
+};
