@@ -4,7 +4,7 @@ import { Request, Response } from 'express';
 
 export const createOrder = async (req: Request, res: Response) => {
   try {
-    const order = req.body.orders;
+    const order = req.body;
     const value = OrderValidationSchema.parse(order);
     const result = await createOrderService(value);
     res.status(200).json({
@@ -32,7 +32,7 @@ export const getOrder = async (req: Request, res: Response) => {
   } catch (err) {
     res.status(500).json({
       success: false,
-      message:'Something is missing or invalid, check and try again',
+      message: 'Something is missing or invalid, check and try again',
       error: err,
     });
   }

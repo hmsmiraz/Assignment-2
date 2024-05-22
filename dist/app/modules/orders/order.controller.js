@@ -14,7 +14,7 @@ const order_service_1 = require("./order.service");
 const order_validation_1 = require("./order.validation");
 const createOrder = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const order = req.body.orders;
+        const order = req.body;
         const value = order_validation_1.OrderValidationSchema.parse(order);
         const result = yield (0, order_service_1.createOrderService)(value);
         res.status(200).json({
