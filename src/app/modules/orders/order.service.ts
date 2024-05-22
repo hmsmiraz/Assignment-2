@@ -24,7 +24,7 @@ export const createOrderService = async (order: TOrder) => {
       );
       return result;
     } else {
-      throw new Error('Insufficient quantity in stock');
+      throw new Error('Insufficient quantity available in inventory');
     }
   }
 };

@@ -11,4 +11,11 @@ app.use(cors());
 app.use('/api/products', ProductsRoutes);
 app.use('/api/orders', OrderRoutes);
 
+app.all('*', (req: Request, res: Response) => {
+  return res.status(404).json({
+    success: false,
+    message: 'Route not found',
+  });
+});
+
 export default app;
