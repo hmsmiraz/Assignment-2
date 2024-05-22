@@ -1,5 +1,9 @@
 import { Request, Response } from 'express';
-import { ProductServices, getProductBySearch, updateProductInDB,  } from './product.service';
+import {
+  ProductServices,
+  getProductBySearch,
+  updateProductInDB,
+} from './product.service';
 import ProductValidation from './product.validation';
 
 const createProduct = async (req: Request, res: Response) => {
@@ -12,22 +16,21 @@ const createProduct = async (req: Request, res: Response) => {
       message: 'Product is created successfully',
       data: result,
     });
-  } catch (err: any) {
+  } catch (err) {
     res.status(500).json({
       success: false,
-      message:
-        err.message || 'Something is missing or invalid, check and try again',
+      message: 'Something is missing or invalid, check and try again',
       error: err,
     });
   }
 };
- const getProduct = async (req: Request, res: Response) => {
+const getProduct = async (req: Request, res: Response) => {
   try {
     const searchTerm = req.query?.searchTerm;
     const result = await getProductBySearch(searchTerm as string);
     res.status(200).send({
       success: true,
-      message: "Product fetched successfully",
+      message: 'Product fetched successfully',
       data: result,
     });
   } catch (error) {
@@ -44,11 +47,10 @@ const getSingleProduct = async (req: Request, res: Response) => {
       message: 'Product is retrieved successfully',
       data: result,
     });
-  } catch (err: any) {
+  } catch (err) {
     res.status(500).json({
       success: false,
-      message:
-        err.message || 'Something is missing or invalid, check and try again',
+      message: 'Something is missing or invalid, check and try again',
       error: err,
     });
   }
@@ -80,11 +82,10 @@ const deleteProduct = async (req: Request, res: Response) => {
       message: 'Product is deleted successfully',
       data: result,
     });
-  } catch (err: any) {
+  } catch (err) {
     res.status(500).json({
       success: false,
-      message:
-        err.message || 'Something is missing or invalid, check and try again',
+      message: 'Something is missing or invalid, check and try again',
       error: err,
     });
   }

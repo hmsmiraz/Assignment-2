@@ -12,11 +12,10 @@ export const createOrder = async (req: Request, res: Response) => {
       message: 'Order is created successfully',
       data: result,
     });
-  } catch (err: any) {
+  } catch (err) {
     res.status(500).json({
       success: false,
-      message:
-        err.message || 'Something is missing or invalid, check and try again',
+      message: 'Something is missing or invalid, check and try again',
       error: err,
     });
   }
@@ -30,11 +29,10 @@ export const getOrder = async (req: Request, res: Response) => {
       message: 'Orders fetched successfully!',
       data: result,
     });
-  } catch (err: any) {
+  } catch (err) {
     res.status(500).json({
       success: false,
-      message:
-        err.message || 'Something is missing or invalid, check and try again',
+      message:'Something is missing or invalid, check and try again',
       error: err,
     });
   }
