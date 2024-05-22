@@ -15,7 +15,7 @@ Follow these steps to set up the project on your local machine:
 1. **Clone the repository:**
 
     ```bash
-    git clone [https://github.com/hmsmiraz/Assignment-2.git](https://github.com/hmsmiraz/Assignment-2.git)
+    git clone https://github.com/hmsmiraz/Assignment-2.git
     ```
 
 2. **Navigate to the project directory:**
