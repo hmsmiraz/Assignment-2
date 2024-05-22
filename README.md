@@ -52,5 +52,9 @@ To run the application, follow these steps:
 
 If you would like to contribute to this project, please fork the repository and submit a pull request.
 
+- [Live Link](https://assignment-2-delta-eight.vercel.app)
+- [Product Api](https://assignment-2-delta-eight.vercel.app/api/products)
+- [Orders Api](https://assignment-2-delta-eight.vercel.app/api/orders)
+
 
 
