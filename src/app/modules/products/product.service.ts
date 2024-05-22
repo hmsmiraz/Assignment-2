@@ -10,11 +10,13 @@ const getAllProductFromDB = async () => {
   return result;
 };
 const getSingleProductFromDB = async (id: string) => {
-  const result = await ProductModel.findOne({ id });
+  const query = { _id: id };
+  const result = await ProductModel.findOne(query);
   return result;
 };
 const deleteProductFromDB = async (id: string) => {
-  const result = await ProductModel.updateOne({ id }, { isDeleted: true });
+  const query = { _id: id };
+  const result = await ProductModel.findByIdAndDelete(query);
   return result;
 };
 
