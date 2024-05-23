@@ -8,9 +8,16 @@ const app: Application = express();
 app.use(express.json());
 app.use(cors());
 
+//product and order route
 app.use('/api/products', ProductsRoutes);
 app.use('/api/orders', OrderRoutes);
 
+const getController = (req: Request, res: Response) => {
+  res.send("Welcome to the E-commerce Product & Order Backend Project");
+};
+app.get('/', getController);
+
+//not found route
 app.all('*', (req: Request, res: Response) => {
   return res.status(404).json({
     success: false,

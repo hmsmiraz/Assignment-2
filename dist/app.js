@@ -10,8 +10,14 @@ const order_route_1 = require("./app/modules/orders/order.route");
 const app = (0, express_1.default)();
 app.use(express_1.default.json());
 app.use((0, cors_1.default)());
+//product and order route
 app.use('/api/products', product_route_1.ProductsRoutes);
 app.use('/api/orders', order_route_1.OrderRoutes);
+const getController = (req, res) => {
+    res.send("Welcome to the E-commerce Product & Order Backend Project");
+};
+app.get('/', getController);
+//not found route
 app.all('*', (req, res) => {
     return res.status(404).json({
         success: false,
